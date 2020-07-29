@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_login
-    return head(:forbidden) unless session.include? :name
+    return head(:forbidden) unless session.include? current_user
   end
 
 end
