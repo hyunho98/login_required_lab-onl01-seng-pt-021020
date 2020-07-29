@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
     session[:name] ||= nil
   end
 
+  private
+
   def require_login
     return head(:forbidden) unless session.include? :current_user
   end
